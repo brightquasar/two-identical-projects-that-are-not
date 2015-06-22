@@ -60,9 +60,10 @@ class DetailViewController: UIViewController, UITextFieldDelegate, UIImagePicker
   }
 
   func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [NSObject: AnyObject]) {
-    let image = info[UIImagePickerControllerEditedImage] as? UIImage
+    if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
       self.imageView.image = image
       picker.dismissViewControllerAnimated(true, completion: nil)
+    }
   }
 
 }
